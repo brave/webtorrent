@@ -153,6 +153,7 @@ class WebTorrent extends EventEmitter {
   }
 
   get downloadSpeed () { return this._downloadSpeed() }
+
   get uploadSpeed () { return this._uploadSpeed() }
 
   get progress () {
@@ -257,13 +258,20 @@ class WebTorrent extends EventEmitter {
     this._debug('seed')
     opts = opts ? Object.assign({}, opts) : {}
 
+    // no need to verify the hashes we create
+    opts.skipVerify = true
+
+    const isFilePath = typeof input === 'string'
+
     // When seeding from fs path, initialize store from that path to avoid a copy
-    if (typeof input === 'string') opts.path = path.dirname(input)
+    if (isFilePath) opts.path = path.dirname(input)
     if (!opts.createdBy) opts.createdBy = `WebTorrent/${VERSION_STR}`
 
     const onTorrent = torrent => {
       const tasks = [
         cb => {
+          // when a filesystem path is specified, files are already in the FS store
+          if (isFilePath) return cb()
           torrent.load(streams, cb)
         }
       ]
@@ -290,7 +298,7 @@ class WebTorrent extends EventEmitter {
     let streams
 
     if (isFileList(input)) input = Array.from(input)
-    else if (!Array.isArray(input)) input = [ input ]
+    else if (!Array.isArray(input)) input = [input]
 
     parallel(input.map(item => cb => {
       if (isReadable(item)) concat(item, cb)
