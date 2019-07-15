@@ -105,13 +105,13 @@ WebTorrent is still pretty new, but it's already being used in cool ways:
 - **[Bitlove.org][bitlove]** - Your favorite podcasts via BitTorrent
 - **[lofiTorrent][lofitorrent]** - Online and offline browser torrent client
 - **[Live-torrent][live-torrent]** - Simple implementation of a webtorrent powered live streaming solution ([source code][live-torrent-source])
-- **[WWT][wwt]** - Watch videos by torrents in your browser
 - **[CDNBye][CDNBye]** -  CDNBye implements WebRTC datachannel to scale live/vod video streaming by peer-to-peer network using bittorrent-like protocol.
 - **[Files.fm][Files.fm]** - a fast file sharing and freemium cloud storage service that uses P2P technology to accelerate unlimited downloads and file distribution.
 - **[imgest][imgest]** - Serverless shareable image gallery built with JavaScript and WebTorrent.
 - **[Bugout][Bugout]** - build and run back-end web services in a browser tab.
 - **[P2P Media Loader][p2p-media-loader]** - engine for Hls.js and Shaka Player that enables P2P sharing of live and VOD streams over HLS or DASH protocols.
 - **[Cheff][Cheff]** - Share food recipes between your devices. [source code](https://github.com/vasco3/cheff)
+- **[Hubzilla](https://hubzilla.org)** - WebTorrent player integration into posts ([source code](https://github.com/demitas-ace/wtplayer/tree/master/wtplayer))
 - ***Your app here – [Send a pull request][pr] with your URL!***
 
 #### WebTorrent Product Alternatives
@@ -192,7 +192,6 @@ There's also a list of WebTorrent-powered alternatives to centralized services h
 [lofitorrent]: https://lofitorrent.js.org/
 [live-torrent]: https://live.computer
 [live-torrent-source]: https://github.com/pldubouilh/live-torrent
-[wwt]: https://tnoevry.github.io/wwt/
 [CDNBye]: https://github.com/cdnbye/hlsjs-p2p-engine
 [Files.fm]: https://files.fm
 [imgest]: https://imgest.hashbase.io
